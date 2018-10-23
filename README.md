@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 * backend https://github.com/iexbase/trondapps-backend
 -----
-* npm run install
+* npm install
 * edit variable *baseAPI* in file /environments/environment.*.ts
 * ng serve --open
 
