@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.container {
+    height: 100% !important;
+    width: 100% !important;
+    max-width: 1300px;
+    margin: 60px auto 0;
+}

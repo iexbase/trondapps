@@ -1,0 +1,14 @@
+<div class="search-header">
+    <h1 fxLayout="row" fxLayoutAlign="start center">
+        <a class="icon" routerLink="/"><mat-icon>home</mat-icon></a>
+        <span>Search "{{query$ | async}}"</span>
+    </h1>
+</div>
+
+<div style="margin:20px;" *ngIf="result$ | async;">
+    <p class="mat-subheading-2">No Result Found!</p>
+    <p class="mat-body-1">Here are the supported search queries.</p>
+    <ul>
+        <li>Project Name (e.g., iexpost)</li>
+    </ul>
+</div>

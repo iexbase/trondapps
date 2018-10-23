@@ -1,0 +1,54 @@
+.submit-header {
+    background: #b71c1c;
+    padding-left: 20px;
+
+    h1 {
+        font-weight: 300;
+        margin: 0;
+        padding: 28px 8px;
+        font-size: 20px;
+        color: #fff;
+
+        a.icon {
+            float: left;
+            margin-right: 10px;
+            color: #f3f3f3;
+        }
+    }
+}
+
+.error-text {
+    font-size: 13px;
+    color: red;
+}
+
+.upload-image {
+    padding: 10px;
+
+    label {
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    input {
+        margin-top: 15px;
+    }
+}
+
+.dapp-status-field {
+    padding: 10px 20px 20px;
+
+    label {
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .mat-radio-group {
+        margin-top: 10px;
+        font-size: 14px;
+
+        .mat-radio-button {
+            margin-bottom: 5px;
+        }
+    }
+}

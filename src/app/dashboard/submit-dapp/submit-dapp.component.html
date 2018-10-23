@@ -1,0 +1,98 @@
+<div class="submit-header">
+    <h1 fxLayout="row" fxLayoutAlign="start center">
+        <a class="icon" routerLink="/"><mat-icon>home</mat-icon></a>
+        <span>Submit an DApp</span>
+    </h1>
+</div>
+
+
+<div class="submit-content container" style="max-width: 500px">
+    <form enctype="multipart/form-data">
+        <div fxLayout="column">
+            <mat-form-field appearance="outline">
+                <mat-label>Submit a DApp</mat-label>
+                <input [(ngModel)]="fields.name" name="name" matInput placeholder="The DApp name"  required>
+                <mat-hint *ngIf="errors.name" class="error-text">{{errors.name}}</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>DApp Author</mat-label>
+                <input [(ngModel)]="fields.author" name="author" matInput placeholder="The DApp author"  required>
+                <mat-hint *ngIf="errors.author" class="error-text">{{errors.author}}</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Contact Email</mat-label>
+                <input type="email" [(ngModel)]="fields.email" name="email" matInput placeholder="Email of the primary contact (this will not be made public"  required>
+                <mat-hint *ngIf="errors.email" class="error-text">{{errors.email}}</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Teaser Description</mat-label>
+                <input [(ngModel)]="fields.short_text" name="short_text" matInput placeholder="A short teaser that is simple and descriptive"  required>
+                <mat-hint *ngIf="errors.short_text" class="error-text">{{errors.short_text}}</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Full Description</mat-label>
+                <textarea [(ngModel)]="fields.text" name="text" [mat-autosize]="true" matInput placeholder="A short teaser that is simple and descriptive" rows="5"  required></textarea>
+                <mat-hint *ngIf="errors.text" class="error-text">{{errors.text}}</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Website URL</mat-label>
+                <input type="url" [(ngModel)]="fields.website_url" name="website_url" matInput placeholder="A URL to this DApp's website" required>
+                <mat-hint *ngIf="errors.website_url" class="error-text">{{errors.website_url}}</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Software Licence</mat-label>
+                <input [(ngModel)]="fields.software_licence" name="software_licence" matInput placeholder="(e.g. MIT, GPL)">
+                <mat-hint *ngIf="errors.software_licence" class="error-text">{{errors.software_licence}}</mat-hint>
+            </mat-form-field>
+
+
+            <div class="dapp-status-field">
+                <label>Dapp Status</label>
+                <mat-radio-group  [(ngModel)]="fields.status" name="status" fxLayout="column" [required]="true">
+                    <mat-radio-button *ngFor="let status of statusses" [value]="status.id">{{ status.name }}</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Category</mat-label>
+                <mat-select [(ngModel)]="fields.category" name="category" [required]="true">
+                    <mat-option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Contract Address</mat-label>
+                <input [(ngModel)]="fields.contract_address" name="contract_address" matInput placeholder="TRON account address" required>
+                <mat-hint *ngIf="errors.contract_address" class="error-text">{{errors.contract_address}}</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Social Media Link</mat-label>
+                <input type="url" [(ngModel)]="fields.github" name="github" matInput placeholder="https://github.com/...">
+                <mat-hint *ngIf="errors.github" class="error-text">{{errors.github}}</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>DApp URL</mat-label>
+                <input type="url" [(ngModel)]="fields.launch_url" name="launch_url" matInput placeholder="A URL that will launch this ÐApp directly" required>
+                <mat-hint *ngIf="errors.launch_url" class="error-text">{{errors.launch_url}}</mat-hint>
+            </mat-form-field>
+
+            <div class="upload-image">
+                <label>Logo Upload</label><br />
+                <input accept="image/jpeg, .jpeg, image/png, .png, image/pjpeg, .jpg" type="file" (change)="onFileChanged($event)" required>
+                <p *ngIf="errors.logo_url" class="error-text">{{errors.logo_url}}</p>
+            </div>
+
+            <!-- Отправить запрос -->
+            <button (click)="onSubmit()" style="width: 100px;margin: 0 auto;margin-top: 20px;" mat-raised-button color="primary">Submit</button>
+
+        </div>
+    </form>
+</div>

@@ -1,0 +1,16 @@
+<div class="toolbar-top">
+    The curated list of {{project_count}} decentralized apps
+</div>
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+  <h1 class="mat-headline">TRON Dapps</h1>
+  <app-search (onSearchExpanded)="searchExpanded = $event" [ngClass]="searchExpanded ? 'search-expanded' : 'search-collapsed'"></app-search>
+</mat-toolbar>
+
+<!--<header fxLayout="row" fxLayoutAlign="start center">-->
+  <!--<div fxFlex *ngIf="!searchExpanded">-->
+    <!--<a class="brand" routerLink="/">-->
+      <!--<span>Tron DApps</span>-->
+    <!--</a>-->
+  <!--</div>-->
+  <!--<app-search (onSearchExpanded)="searchExpanded = $event" [ngClass]="searchExpanded ? 'search-expanded' : 'search-collapsed'"></app-search>-->
+<!--</header>-->

@@ -1,0 +1,36 @@
+<header class="dashboard-header">
+    <div class="dashboard-header-section">
+        <div class="dashboard-header-headline">
+            <h1 class="mat-h1">TRON Decentralized</h1>
+            <h2> TRON is an ambitious project dedicated to building the infrastructure for a truly decentralized Internet</h2>
+        </div>
+
+        <div class="dashboard-header-start">
+            <button mat-button="" mat-raised-button class="mat-primary" routerLink="/submit">Submit dApp</button>
+        </div>
+
+    </div>
+</header>
+
+
+<div class="container apps-set__items" fxLayout="row wrap" fxLayoutAlign="start stretch" *ngIf="isLoading">
+
+  <mat-card class="apps-set__item" fxFlex="23"  *ngFor="let project of projects" [routerLink]="'/project/' + project.slug">
+      <div mat-card-image="">
+          <img [src]="project.logo_url"/>
+      </div>
+    <mat-card-header fxLayout="column">
+      <mat-card-title>{{ project.name }}</mat-card-title>
+      <mat-card-subtitle>{{project.author}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{project.short_text}}</p>
+    </mat-card-content>
+
+    <div class="status" [ngClass]="'status-'+ status[project.status].name.toLowerCase()">
+      <span>{{status[project.status].name}}</span>
+    </div>
+  </mat-card>
+
+
+</div>

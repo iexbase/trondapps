@@ -1,0 +1,74 @@
+
+<div class="project-header" *ngIf="isLoading">
+    <h1 fxLayout="row" fxLayoutAlign="start center">
+        <a class="icon" routerLink="/"><mat-icon>home</mat-icon></a>
+        <span>{{ item.name }}</span>
+        <span fxFlex=""></span>
+        <a target="_blank" [href]="item.launch_url" mat-raised-button >Launch ÐApp</a>
+        &nbsp;&nbsp;
+        <a target="_blank" [href]="item.website_url" mat-raised-button>Visit website</a>
+    </h1>
+</div>
+
+<div class="detail container" *ngIf="isLoading">
+
+    <div fxLayout="row">
+        <div fxFlex="25">
+            <div class="detail-card">
+                <h3 class="title">Status</h3>
+                <p class="content status" [ngClass]="'status-'+ status[item.status].name.toLowerCase()">
+                    {{ status[item.status].name }}
+                </p>
+            </div>
+        </div>
+        <div fxFlex="25">
+            <div class="detail-card">
+                <h3 class="title">Authors</h3>
+                <p class="content">
+                    {{ item.author }}
+                </p>
+            </div>
+        </div>
+        <div fxFlex="25">
+            <div class="detail-card">
+                <h3 class="title">Software license</h3>
+                <p class="content" *ngIf="item.software_license">{{ item.software_license }}</p>
+                <p class="content" *ngIf="!item.software_license">None</p>
+            </div>
+        </div>
+
+        <div fxFlex="25">
+            <div class="detail-card">
+                <h3 class="title">Contract address</h3>
+                <p class="content" *ngIf="item.contact_address">{{ item.contact_address }}</p>
+                <p class="content" *ngIf="!item.contact_address">None</p>
+            </div>
+        </div>
+    </div>
+
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch">
+        <div fxFlex="60">
+            <div class="detail-card">
+                <h3 class="title">Full description</h3>
+                <p class="content">{{ item.text }}</p>
+            </div>
+        </div>
+
+        <div fxFlex="40">
+            <div class="detail-card">
+                <h3 class="title">Details</h3>
+                <div>
+                    <table>
+                        <tbody>
+                        <tr><td>Category:</td><td>{{ category[item.category].name }}</td></tr>
+                        <tr><td>Submitted:</td><td> {{item.created_at | date: 'dd MMM yyyy, hh:mm'}} </td></tr>
+                        <tr><td>Last updated:</td><td> {{ item.updated_at | date: 'dd MMM yyyy, hh:mm'}} </td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
