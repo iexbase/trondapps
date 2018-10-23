@@ -1,5 +1,6 @@
-# Tronapp
+<img src="https://downloader.disk.yandex.ru/preview/ac8a264884e89dec4705f085cf5f6ab95ab1c031f14c82284b259e04d146b6f4/5bcfa088/fAJlD2l5xgfbrwqcVrk3P-R0GtiaQy_oHvXV6jf-4YRRyBd_sjCw7uVRJPUjTpPce_vMv0WIIPUyUpnxQtfY2g%3D%3D?uid=0&filename=2018-10-23_21-27-52.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048">
 
+# Tronapp
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
 
 ## Install
